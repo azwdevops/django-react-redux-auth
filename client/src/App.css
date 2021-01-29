@@ -1,0 +1,220 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  --nav-width: 68px;
+  /*===== Colors =====*/
+  --first-color: #4723d9;
+  --first-color-light: #afa5d9;
+  --white-color: #f7f6fb;
+
+  /*===== Font and typography =====*/
+  --body-font: "Nunito", sans-serif;
+  --normal-font-size: 1rem;
+
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: var(--header-height) 0 0 0;
+  padding: 0 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button,
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.button:hover,
+button:hover {
+  opacity: 0.6;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* styles for dialog components */
+.dialog {
+  padding: 15px 20px;
+}
+.dialog > h3 {
+  color: dodgerblue;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* for items spanning the entire width */
+.dialog__rowSingleItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 95% !important;
+  grid-template-areas:
+    "label"
+    "content";
+  margin: 5px auto 10px auto;
+}
+.dialog__rowSingleItem > label {
+  grid-area: label;
+  color: purple;
+  font-weight: bold;
+  padding: 3px 8px;
+  max-width: 900px;
+  width: 100%;
+  margin: 2px auto;
+}
+
+/* for two items sharing the width */
+.dialog__row {
+  display: grid;
+  margin: 10px auto;
+  column-gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 95%;
+}
+.dialog__row > label {
+  color: purple;
+  font-weight: bold;
+  padding: 3px 8px;
+}
+.dialog__row > .label__left {
+  grid-column: 1/4;
+  grid-row: 1;
+}
+.dialog__row > .label__right {
+  grid-column: 4/7;
+  grid-row: 1;
+}
+.dialog__row > .input__left,
+.dialog__row > .select__left {
+  grid-column: 1/4;
+  grid-row: 2;
+  max-width: 95%;
+}
+.dialog__row > .input__right,
+.dialog__row > .select__right {
+  grid-column: 4/7;
+  grid-row: 2;
+  max-width: 100%;
+}
+
+.dialog__row > input,
+.dialog__row > select,
+.dialog__rowSingleItem > input,
+.dialog__rowSingleItem > select {
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 2px solid lightgray;
+  outline: none;
+}
+.dialog__row > input:focus,
+.dialog__rowSingleItem > input:focus,
+.dialog__row > select:focus {
+  border: 2px solid dodgerblue;
+}
+.form__Buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 950px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.form__Buttons > button {
+  padding: 7px 20px;
+  margin: 0px 20px;
+  max-width: 150px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.form__Buttons > button:nth-child(1) {
+  background-color: red;
+  justify-self: start;
+}
+.form__Buttons > button:nth-child(2) {
+  background-color: dodgerblue;
+  justify-self: end;
+}
+
+.extra__formButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 15px auto;
+  color: dodgerblue;
+  font-weight: bold;
+}
+.google__signin {
+  padding: 8px 15px;
+  background-color: #6851fc;
+  color: white;
+  font-weight: 700;
+  border-radius: 20px;
+}
+
+/* end of dialog components */
+
+#pageSubmitting,
+#formSubmitting {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: not-allowed !important;
+}
+
+/* error styling */
+.response__message {
+  font-weight: bold;
+  text-align: center;
+  height: fit-content;
+  font-size: 1rem;
+  margin-top: 5px auto;
+  padding: 4px;
+  width: 90%;
+  position: absolute;
+  max-width: 100%;
+}
+/* we set the background for each item since we only want it to be visible when the error is being shown */
+.error {
+  color: red;
+  background-color: #f1f1f1;
+}
+.success {
+  color: #02ab4b;
+  background-color: #f1f1f1;
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px) {
+  body {
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+
+  /*Add padding body desktop*/
+  .body-pd {
+    margin-left: calc(var(--nav-width));
+  }
+}

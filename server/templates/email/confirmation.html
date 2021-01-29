@@ -1,0 +1,26 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %} Your account was successfully activated!{% endblocktrans %}
+{% endblock %}
+
+{% trans "Hi," %}
+
+{% block text_body %}
+{% trans "Your account has been activated and is ready to use" %}
+
+{% trans "Thanks for using our services." %}
+
+{% blocktrans %}azw team{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+
+<p>{% trans "Hi, " %}</p>
+
+<p>{% trans "Your account has been activated and is ready to use." %}</p>
+
+<p>{% trans "Thanks for using our services." %}</p>
+
+<p>{% blocktrans %}The TesCholar team{% endblocktrans %}</p>
+{% endblock html_body %}

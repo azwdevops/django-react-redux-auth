@@ -1,0 +1,61 @@
+{% load i18n %} 
+{% block subject %} 
+{% blocktrans %} 
+
+Account activation on {{site_name }}
+
+{% endblocktrans %} 
+
+{% endblock subject %} 
+
+{% block text_body %} 
+
+{% blocktrans %} Hi, 
+
+Welcome to TesCholar. 
+
+To activate your account, click on the link below. 
+
+{% endblocktrans %} 
+
+{{ protocol }}://{{ domain }}/{{ url|safe }} 
+
+{% trans "Thanks for using our services" %} 
+
+{% blocktrans %} azw team 
+
+{% endblocktrans %} 
+
+{% endblock text_body %} 
+
+{% block html_body %}
+
+<p>{% blocktrans %} Hi, 
+  {% endblocktrans %}
+</p>
+<br />
+
+<p>
+  {% blocktrans %} 
+  Welcome. 
+  {% endblocktrans %}
+</p><br />
+
+<p>{% trans "To activate your account, click on the link below:" %}
+</p>
+<br />
+
+<p>
+  <a href="{{ protocol }}://{{ domain }}/{{ url|safe }}"
+    >{{ protocol }}://{{ domain }}/{{ url|safe }}</a
+  >
+</p>
+<br />
+
+<p>{% trans "Thanks for using our services." %}</p>
+<br />
+
+<p>{% blocktrans %}azw team{% endblocktrans %}</p>
+<br />
+
+{% endblock html_body %}

@@ -1,0 +1,17 @@
+.activate__account {
+  text-align: center;
+  margin-top: 20%;
+}
+.activate__account > h1 {
+  font-size: 1.8rem;
+  color: purple;
+  margin-bottom: 15px;
+}
+.activate__account > button {
+  background-color: dodgerblue;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}

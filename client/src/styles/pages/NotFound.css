@@ -1,0 +1,15 @@
+.not__found {
+    max-width: 600px;
+    margin:15% auto;
+    text-align: center;
+}
+.not__foundHeading {
+   margin-bottom:40px;
+   color:purple;
+   font-size:3rem !important;
+}
+.not__found > p {
+    color:dodgerblue;
+    font-weight:bold;
+    font-size:1.8em;
+}
